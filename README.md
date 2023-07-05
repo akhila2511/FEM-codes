@@ -1,1 +1,2 @@
 # FEM-codes
+I have created codes for solving 2-dimensional three noded triangular elements and four noded quadrilateral elements in Finite Element Method(FEM).My codes can able to find local stiffness matrix, global stiffness matrix, global force and can able to find displacements at each nodes and can able to plot original nodes and elements along with displaced nodes and elements.I also found stress and strain for both triangle and quadrilateral elements and i also plotted stress and strain for all the elements.
