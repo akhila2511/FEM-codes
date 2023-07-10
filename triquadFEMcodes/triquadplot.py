@@ -20,13 +20,13 @@ def plotting_mesh(nodes,elements):
     plt.show()
     return None
 def plotting(nodes,elements,U):
-    plt.scatter(nodes[:,0],nodes[:,1], label="original nodes")
+    plt.scatter(nodes[:,0],nodes[:,1])
     displaced_nodes =nodes.astype(float).copy()
     displaced_nodes[:,0] += U[::2,0]
     displaced_nodes[:,1] += U[1::2,0]  
     plt.scatter(displaced_nodes[:,0],displaced_nodes[:,1], label='Displaced nodes')
     for i,node in enumerate(nodes):
-        plt.annotate(i+1,(node[0],node[1]))
+        plt.annotate(i,(node[0],node[1]))
     for i,element in enumerate(elements):
         x= displaced_nodes[element,0]
         y = displaced_nodes[element,1]
@@ -34,12 +34,12 @@ def plotting(nodes,elements,U):
         y1=nodes[element,1]
         plt.fill(x1,y1,edgecolor="black",fill=False)
         plt.fill(x,y,edgecolor="red",fill=False)
-        center_x=np.mean(x)
-        center_y=np.mean(y)
-        center_x1=np.mean(x1)
-        center_y1=np.mean(y1)
-        plt.annotate(i+1,(center_x,center_y))
-        plt.annotate(i+1,(center_x1,center_y1))
+        # center_x=np.mean(x)
+        # center_y=np.mean(y)
+        # center_x1=np.mean(x1)
+        # center_y1=np.mean(y1)
+        # plt.annotate(i,(center_x,center_y))
+        # plt.annotate(i,(center_x1,center_y1))
     plt.legend()
     plt.show()
     return None
